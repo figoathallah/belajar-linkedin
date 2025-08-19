@@ -16,7 +16,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   return (
-    <nav className="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
+    <nav className="relative bg-sky-200 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -66,18 +66,18 @@ export default function Navbar() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
               <img
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Your Company"
-                className="h-8 w-auto"
+                src="belajar-linkedin-logo.svg"
+                alt="Belajar LinkedIn"
+                className="h-8 w-auto scale-300"
               />
             </div>
-            <div className="hidden sm:ml-6 sm:block">
+            <div className="hidden sm:ml-6 sm:block px-6">
               <div className="flex space-x-4">
                 {navItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-white/5 hover:text-white"
                   >
                     {item.name}
                   </a>
@@ -87,25 +87,27 @@ export default function Navbar() {
           </div>
         </div>
         {mobileOpen && (
-          <div className="sm:hidden px-4 py-2 space-y-2 bg-gray-800 rounded-md shadow-lg">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={`block rounded-md px-3 py-2 text-base font-medium 
-                    ${
-                      isActive
-                        ? "bg-gray-950/50 text-white"
-                        : "text-gray-300 hover:bg-white/5 hover:text-white"
-                    }`}
-                >
-                  {item.name}
-                </a>
-              );
-            })}
+          <div className="pb-4">
+            <div className="sm:hidden px-4 pb-3 py-2 space-y-2 bg-sky-800 rounded-md shadow-lg">
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={`block rounded-md px-3 py-2 text-base font-medium
+                      ${
+                        isActive
+                          ? "bg-gray-950/50 text-white"
+                          : "text-gray-300 hover:bg-white/5 hover:text-white"
+                      }`}
+                  >
+                    {item.name}
+                  </a>
+                );
+              })}
+            </div>
           </div>
         )}
       </div>
