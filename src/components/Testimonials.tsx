@@ -28,7 +28,7 @@ export default function Testimonials() {
   const testimonials = [
     {
       name: "Mirza S.",
-      role: "Data Analyst",
+      role: "Mahasiswa Fasilkom UI",
       quote: `Berasa banget manfaatnya ikut kelas ini. Gak hanya bikin
         profil LinkedIn saya lebih profesional, tapi juga menambah
         banyak ilmu baru terkait jurusan yang saya minat.`,
@@ -36,14 +36,14 @@ export default function Testimonials() {
     },
     {
       name: "Sara K.",
-      role: "Risk Management Analyst",
+      role: "Mahasiswa STEI ITB",
       quote: `Seru ikut kelas di Belajar LinkedIn, bisa bonding sama temen baru 
       sekalian bangun relasi buat nantinya. Mentor-mentornya juga mantep, pokoknya the best!`,
       img: "testimony-photo-2.jpg",
     },
     {
       name: "Aditya M.",
-      role: "Marketing Strategist",
+      role: "Mahasiswa BINUS Business School",
       quote: `Salah satu pengalaman yang tidak akan saya pernah lupakan. Makasih Belajar LinkedIn
       telah memberikan saya kesempatan untuk menjadi lebih pede di dunia kerja!`,
       img: "testimony-photo-3.png",
