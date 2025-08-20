@@ -1,9 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Testimonials() {
+  const [mounted, setMounted] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setMounted(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   const testimonials = [
     {
@@ -12,20 +32,21 @@ export default function Testimonials() {
       quote: `Berasa banget manfaatnya ikut kelas ini. Gak hanya bikin
         profil LinkedIn saya lebih profesional, tapi juga menambah
         banyak ilmu baru terkait jurusan yang saya minat.`,
-      img: "globe.svg",
+      img: "testimony-photo-1.jpg",
     },
     {
       name: "Sara K.",
-      role: "Financial Analyst",
+      role: "Risk Management Analyst",
       quote: `Seru ikut kelas di Belajar LinkedIn, bisa bonding sama temen baru 
-      sekalian bangun relasi buat masuk dunia kerja. Mentor-mentornya juga mantep, pokoknya the best!`,
-      img: "vercel.svg",
+      sekalian bangun relasi buat nantinya. Mentor-mentornya juga mantep, pokoknya the best!`,
+      img: "testimony-photo-2.jpg",
     },
     {
-      name: "Satono Diamond",
-      role: "Triple Crown Champion",
-      quote: `Umazing!`,
-      img: "vercel.svg",
+      name: "Aditya M.",
+      role: "Marketing Strategist",
+      quote: `Salah satu pengalaman yang tidak akan saya pernah lupakan. Makasih Belajar LinkedIn
+      telah memberikan saya kesempatan untuk menjadi lebih pede di dunia kerja!`,
+      img: "testimony-photo-3.png",
     },
   ];
 
@@ -36,8 +57,15 @@ export default function Testimonials() {
   return (
     <div className="relative w-11/12 sm:w-full max-w-sm mx-auto overflow-hidden bg-blue-200 border border-gray-200 rounded-lg shadow-sm">
       <div
-        className="flex transition-transform duration-300 ease-in-out"
-        style={{ transform: `translateX(-${index * 100}%)` }}
+        ref={sectionRef}
+        className={`flex transition-transform duration-300 ease-in-out ${
+          !mounted ? "invisible" : "visible"
+        }`}
+        style={{
+          transform: `translateX(-${index * 100}%)`,
+          opacity: mounted ? 1 : 0,
+          animation: mounted ? "fadeIn 2s ease-out forwards" : "none",
+        }}
       >
         {testimonials.map((t, i) => (
           <div key={i} className="w-full flex-shrink-0 p-4">
