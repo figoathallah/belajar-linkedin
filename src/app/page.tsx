@@ -44,7 +44,6 @@ export default function Home() {
             </a>
           </div>
         </main>
-        {/* FEATURES SECTION */}
         <div className="text-center pb-6 py-4">
           <h1 className="font-barlow text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-white pb-2">
             Key Benefits
@@ -125,7 +124,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* TESTIMONIALS SECTION */}
         <div className="text-center pb-5 py-4">
           <h1 className="font-barlow text-2xl sm:text-3xl lg:text-4xl font-bold text-balance text-white pb-6">
             What our users say
