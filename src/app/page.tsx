@@ -50,7 +50,7 @@ export default function Home() {
             Key Benefits
           </h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 py-5 pb-10 text-center">
-            <div className="bg-blue-200 p-4 rounded-md text-gray-700">
+            <div className="bg-blue-200 p-4 rounded-md text-gray-700 transition-transform duration-300 hover:-translate-y-1">
               <div className="pb-4 flex justify-center">
                 <svg
                   className="w-12 h-12 lg:w-20 lg:h-20 text-gray-900"
@@ -76,7 +76,7 @@ export default function Home() {
                 lebih menarik di mata HRD!
               </p>
             </div>
-            <div className="bg-indigo-200 p-4 rounded-md text-gray-700">
+            <div className="bg-indigo-200 p-4 rounded-md text-gray-700 transition-transform duration-300 hover:-translate-y-1">
               <div className="pb-6 flex justify-center">
                 <svg
                   className="w-12 h-12 lg:w-18 lg:h-18 text-gray-800"
@@ -97,7 +97,7 @@ export default function Home() {
                 pekerjaan impian kamu!
               </p>
             </div>
-            <div className="bg-sky-200 p-4 rounded-md text-gray-700">
+            <div className="bg-sky-200 p-4 rounded-md text-gray-700 transition-transform duration-300 hover:-translate-y-1">
               <div className="pb-4.5 flex justify-center">
                 <svg
                   className="w-12 h-12 lg:w-20 lg:h-20 text-gray-800"
