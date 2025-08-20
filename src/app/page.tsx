@@ -1,5 +1,7 @@
 "use client";
 
+import Testimonials from "@/components/Testimonials";
+
 export default function Home() {
   return (
     <html>
@@ -42,6 +44,7 @@ export default function Home() {
             </a>
           </div>
         </main>
+        {/* FEATURES SECTION */}
         <div className="text-center pb-6 py-4">
           <h1 className="font-barlow text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-white pb-2">
             Key Benefits
@@ -91,7 +94,7 @@ export default function Home() {
               </h2>
               <p className="text-sm lg:text-lg">
                 Pahami berbagai macam strategi yang paling ampuh dalam mencari
-                pekerjaan!
+                pekerjaan impian kamu!
               </p>
             </div>
             <div className="bg-sky-200 p-4 rounded-md text-gray-700">
@@ -121,6 +124,13 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+        {/* TESTIMONIALS SECTION */}
+        <div className="text-center pb-5 py-4">
+          <h1 className="font-barlow text-2xl sm:text-3xl lg:text-4xl font-bold text-balance text-white pb-6">
+            What our users say
+          </h1>
+          <Testimonials />
         </div>
       </body>
     </html>
